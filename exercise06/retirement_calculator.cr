@@ -16,3 +16,15 @@
 # 2.) Don’t hard-code the current year into your program. 
 #     Get it from the system time via your programming language.
 
+print "What is your current age? "
+current_age = gets.not_nil!.to_i
+
+print "At what age would you like to retire? "
+retirement_age = gets.not_nil!.to_i
+
+years_until_retirement = retirement_age - current_age
+puts "You have #{years_until_retirement} years left until you can retire"
+
+current_year = Time.now.year
+retirement_year = current_year + years_until_retirement
+puts "It's #{current_year}, so you can retire in #{retirement_year}"

@@ -35,7 +35,7 @@ module ComputingSimpleInterest
     principal = gets.not_nil!.to_f
 
     print "Enter the rate of interest: "
-    rate = gets.not_nil!.to_f / 100
+    rate = gets.not_nil!.to_f
 
     print "Enter the number of years: "
     years = gets.not_nil!.to_i
@@ -49,7 +49,7 @@ module ComputingSimpleInterest
   end
 
   private def format_rate(rate)
-    (rate * 100).format(decimal_places: 2) + "%"
+    rate.format(decimal_places: 2) + "%"
   end
 
   private def format_amount(amount)
@@ -57,7 +57,7 @@ module ComputingSimpleInterest
   end
 
   private def calculate(principal, rate, years)
-    principal * (1 + (rate * years))
+    principal * (1 + ((rate / 100) * years))
   end
 end
 
